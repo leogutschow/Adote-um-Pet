@@ -22,9 +22,9 @@ class Animal(models.Model):
     nome = models.CharField(max_length=255, blank=False, null=False)
     idade = models.IntegerField()
     local = models.CharField(max_length=255)
-    doador = models.OneToOneField(to=Perfil, on_delete=models.CASCADE, blank=False, null=False)
-    especie = models.OneToOneField(to=Especie, on_delete=models.DO_NOTHING, blank=False, null=False)
-    raca = models.OneToOneField(to=Raca, on_delete=models.DO_NOTHING, blank=True, null=True)
+    doador = models.ForeignKey(Perfil, on_delete=models.CASCADE, blank=False, null=False)
+    especie = models.ForeignKey(Especie, on_delete=models.DO_NOTHING, blank=False, null=False)
+    raca = models.ForeignKey(Raca, on_delete=models.DO_NOTHING, blank=True, null=True)
     descricao = models.TextField()
     slug = models.SlugField(verbose_name='Slug', blank=True, null=True)
 
