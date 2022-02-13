@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block 'conteudo' %}
+
+<p>{{animal.nome}}</p>
+
+<a href="{% url 'perfil:detalhe' animal.doador_id %}"><p>{{animal.doador}}</p></a>
+
+<p>{{animal.idade}} anos</p>
+
+<p>{{animal.descricao}}</p>
+
+
+{% endblock %}

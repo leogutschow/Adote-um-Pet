@@ -5,7 +5,7 @@
   <div class="row mx-auto">
     {% for animal in animais %}
         <div class="col-*-* p-3 pt-5 pd-5 border border-2 m-4" style='width: 250px'>
-          <a href="'#"><h3 class="mx-auto">{{animal.nome}}</h3></a>
+          <a href="{% url 'pet:detalhe' animal.slug %}"><h3 class="mx-auto">{{animal.nome}}</h3></a>
           <h4 class="mx-auto">{{animal.idade}} anos</h4>
           <h4 class="mx-auto">{{animal.raca}}</h4>
           <a href="#"><h6 class="mx-auto">Doador: {{animal.doador}}</h6></a>
@@ -13,7 +13,6 @@
         
     {% endfor %}
   </div>
-
 
 
 {% endblock %}

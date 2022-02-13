@@ -17,3 +17,5 @@ class HomeView(ListView):
 
         return context
 
+class HomePesquisa(TemplateView):
+    pass
