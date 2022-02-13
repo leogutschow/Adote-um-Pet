@@ -26,7 +26,7 @@ class Animal(models.Model):
     especie = models.OneToOneField(to=Especie, on_delete=models.DO_NOTHING, blank=False, null=False)
     raca = models.OneToOneField(to=Raca, on_delete=models.DO_NOTHING, blank=True, null=True)
     descricao = models.TextField()
-    slug = models.SlugField(verbose_name='Slug')
+    slug = models.SlugField(verbose_name='Slug', blank=True, null=True)
 
     def __str__(self):
         return self.nome
@@ -34,3 +34,6 @@ class Animal(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.nome)
+
+        return super().save()
+        
